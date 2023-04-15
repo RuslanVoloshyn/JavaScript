@@ -6,24 +6,25 @@ for (let i = 10; i <= 20; i++) {
 }
 console.log(resultString)
 //Вивести квадрати чисел від 10 до 20.
+let arr = []
 for (let i = 10; i <= 20; i++) {
-	console.log(`${i * i}`);
+	arr = [i] = (i + 10) ** 2;
 }
-
+console.log(`${arr.join(", ")}`);
 //Вивести таблицю множення на 7.
 for (i = 1; i < 11; i++) {
 	console.log(`${i} * 7 = ${i * 7}`);
 }
 //Знайти суму всіх цілих чисел від 1 до 15.
 for (i = 0; i < 15; i++) {
-	console.log(i);
+	arr[i] = i+ 1;
 }
+console.log(arr.reduce((sum, item) => sum +item, 0));
 // //Знайти добуток усіх цілих чисел від 15 до 35.
-let sum = 0;
 for (i = 15; i <= 35; i++) {
-	sum += i;
+	arr[i] = i + 15;
 }
-console.log(sum);
+console.log(arr.reduce((sum, item) => sum +item. 0));
 //Знайти середнє арифметичне всіх цілих чисел від 1 до 500.
 value = 0;
 for (i = 1; i < 500; i++) {
