@@ -18,12 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	saveButton.addEventListener("click", function (e) {
 		e.preventDefault();
 
-		const nameInput = document.getElementById("name");
-		const passwordInput = document.getElementById("password");
-		const ageInput = document.getElementById("age");
-		const emailInput = document.getElementById("email");
-		const phoneInput = document.getElementById("phone");
-		const cardInput = document.getElementById("card");
+		let nameInput = document.getElementById("name");
+		let passwordInput = document.getElementById("password");
+		let ageInput = document.getElementById("age");
+		let emailInput = document.getElementById("email");
+		let phoneInput = document.getElementById("phone");
+		let cardInput = document.getElementById("card");
 
 		let user = {
 			name: nameInput.value,

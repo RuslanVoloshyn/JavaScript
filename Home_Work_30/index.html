@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,51 +8,53 @@
 	<title>Document</title>
 	<link rel="stylesheet" href="./css/style.css">
 </head>
+
 <body>
-		<div class="container">
-			<h1>User Management</h1>
-	
-			<button id="appButton" class="btn">App</button>
-	
-			<form id="userForm" style="display: none;">
-				<div class="form-group">
-					<label for="name">Name:</label>
-					<input type="text" id="name" required>
-				</div>
-				<div class="form-group">
-					<label for="password">Password:</label>
-					<input type="password" id="password" required>
-				</div>
-				<div class="form-group">
-					<label for="age">Age:</label>
-					<input type="number" id="age" required>
-				</div>
-				<div class="form-group">
-					<label for="email">Email:</label>
-					<input type="email" id="email" required>
-				</div>
-				<div class="form-group">
-					<label for="phone">Phone Number:</label>
-					<input type="text" id="phone" required>
-				</div>
-				<div class="form-group">
-					<label for="card">Bank Card Number:</label>
-					<input type="text" id="card" required>
-				</div>
-				<button id="saveButton" class="btn">Save</button>
-			</form>
-	
-			<table id="userTable">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-				<tbody></tbody>
-			</table>
-		</div>
-	
-		<script src="./js/script.js"></script>
+	<div class="container">
+		<h1>User Management</h1>
+
+		<button id="appButton" class="btn">App</button>
+
+		<form id="userForm" class="form_1">
+			<div class="form-group">
+				<label for="name">Name:</label>
+				<input type="text" id="name" required>
+			</div>
+			<div class="form-group">
+				<label for="password">Password:</label>
+				<input type="password" id="password" required>
+			</div>
+			<div class="form-group">
+				<label for="age">Age:</label>
+				<input type="number" id="age" required>
+			</div>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" id="email" required>
+			</div>
+			<div class="form-group">
+				<label for="phone">Phone Number:</label>
+				<input type="text" id="phone" required>
+			</div>
+			<div class="form-group">
+				<label for="card">Bank Card Number:</label>
+				<input type="text" id="card" required>
+			</div>
+			<button id="saveButton" class="btn">Save</button>
+		</form>
+
+		<table id="userTable">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+
+	<script src="./js/script.js"></script>
 </body>
+
 </html>
