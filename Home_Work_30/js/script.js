@@ -40,64 +40,73 @@ document.addEventListener("DOMContentLoaded", function () {
 		userForm.reset();
 	});
 
-	// Відображення користувачів у таблиці
-	function renderUserTable() {
-		userTable.innerHTML = "";
+// Відображення користувачів у таблиці
+function renderUserTable() {
+	userTable.innerHTML = "";
 
-		for (const i = 0; i < users.length; i++) {
-			let user = users[i];
-			let row = document.createElement("tr");
+	for (let i = 0; i < users.length; i++) {
+		let user = users[i];
+		let row = document.createElement("tr");
 
-			let nameCell = document.createElement("td");
-			nameCell.textContent = user.name;
+		let nameCell = document.createElement("td");
+		nameCell.textContent = user.name;
 
-			let actionsCell = document.createElement("td");
-			let editButton = document.createElement("button");
-			editButton.textContent = "Edit";
-			editButton.classList.add("btn");
-			editButton.addEventListener("click", createEditHandler(i));
+		let actionsCell = document.createElement("td");
+		let editButton = document.createElement("button");
+		editButton.textContent = "Edit";
+		editButton.classList.add("btn");
+		editButton.addEventListener(
+			"click",
+			createEditHandler.bind(this, i)
+		);
 
-			const removeButton = document.createElement("button");
-			removeButton.textContent = "Remove";
-			removeButton.classList.add("btn");
-			removeButton.addEventListener("click", createRemoveHandler(i));
+		let removeButton = document.createElement("button");
+		removeButton.textContent = "Remove";
+		removeButton.classList.add("btn");
+		removeButton.addEventListener(
+			"click",
+			createRemoveHandler.bind(this, i)
+		);
 
-			const viewButton = document.createElement("button");
-			viewButton.textContent = "View";
-			viewButton.classList.add("btn");
-			viewButton.addEventListener("click", createViewHandler(user));
+		let viewButton = document.createElement("button");
+		viewButton.textContent = "View";
+		viewButton.classList.add("btn");
+		viewButton.addEventListener(
+			"click",
+			createViewHandler.bind(this, user)
+		);
 
-			actionsCell.appendChild(editButton);
-			actionsCell.appendChild(removeButton);
-			actionsCell.appendChild(viewButton);
+		actionsCell.appendChild(editButton);
+		actionsCell.appendChild(removeButton);
+		actionsCell.appendChild(viewButton);
 
-			row.appendChild(nameCell);
-			row.appendChild(actionsCell);
+		row.appendChild(nameCell);
+		row.appendChild(actionsCell);
 
-			userTable.appendChild(row);
-		}
+		userTable.appendChild(row);
 	}
+}
 
-	// При натисканні кнопки "Edit" відобразити дані користувача у формі для редагування
-	function createEditHandler(index) {
-		return function () {
-			let user = users[index];
+// При натисканні кнопки "Edit" відобразити дані користувача у формі для редагування
+function createEditHandler(index) {
+	userForm.style.display = "block";
 
-			let nameInput = document.getElementById("name");
-			let passwordInput = document.getElementById("password");
-			let ageInput = document.getElementById("age");
-			let emailInput = document.getElementById("email");
-			let phoneInput = document.getElementById("phone");
-			let cardInput = document.getElementById("card");
+	let user = users[index];
 
-			nameInput.value = user.name;
-			passwordInput.value = user.password;
-			ageInput.value = user.age;
-			emailInput.value = user.email;
-			phoneInput.value = user.phone;
-			cardInput.value = user.card;
-		};
-	}
+	let nameInput = document.getElementById("name");
+	let passwordInput = document.getElementById("password");
+	let ageInput = document.getElementById("age");
+	let emailInput = document.getElementById("email");
+	let phoneInput = document.getElementById("phone");
+	let cardInput = document.getElementById("card");
+
+	nameInput.value = user.name;
+	passwordInput.value = user.password;
+	ageInput.value = user.age;
+	emailInput.value = user.email;
+	phoneInput.value = user.phone;
+	cardInput.value = user.card;
+}
 
 	// При натисканні кнопки "Remove" показати підтвердження видалення та видалити користувача зі списку
 	function createRemoveHandler(index) {
